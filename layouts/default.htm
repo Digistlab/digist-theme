@@ -14,8 +14,7 @@ description = "Default template"
     {% placeholder meta_og default %}
     <meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
     <meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
-    <meta property="og:url" content="{{this.app}}" />
-    <meta property="og:image" content="https://www.hynusantara.com/content/images/2019/01/be-creative-creative-creativity-256514-2.jpg" />
+    <meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
     {% endplaceholder %}
     <link rel="shortcut icon" href="{{ 'assets/images/favicon.png'|theme }}">
     <link rel="stylesheet" href="{{ ('assets/css/theme.css')|theme }}?v={{ this.theme.version }}">

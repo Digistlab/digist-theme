@@ -32,15 +32,17 @@ function onEnd()
 }
 ?>
 ==
-{% if post %}
-    {%put mata_og%}
+{% if not slug %}
+    {% if post %}
+        {%put mata_og%}
         <meta property="og:title" content="{{ this.post.meta_title|default(this.post.title) }}" />
         <meta property="og:description" content="{{ this.post.meta_description|default(this.post.description) }}" />
-    {%endput%}
-    <h2>{{ post.title }}</h2>
-
-    {% component 'blogPost' %}
-{% else %}
-    <h2>Post not found</h2>
-    <a href="blog/first-blog-post">first-blog-post</a>
+        <meta property="og:image" content="https://www.hynusantara.com/content/images/2019/01/be-creative-creative-creativity-256514-2.jpg" />
+        {%endput%}
+        <h2>{{ post.title }}</h2>
+        {% component 'blogPost' %}
+    {% else %}
+        <h2>Post not found</h2>
+        <a href="blog/first-blog-post">first-blog-post</a>
+    {% endif %}
 {% endif %}
