@@ -1,0 +1,19 @@
+description = "Front page template"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=1">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="theme-color" content="{{ this.theme.brand_color }}">
+    <link rel="shortcut icon" href="{{ 'assets/images/favicon.png'|theme }}">
+    <link rel="stylesheet" href="{{ ('assets/css/theme.css')|theme }}?v={{ this.theme.version }}">
+    <script src="{{ ('assets/js/uikit.min.js')|theme }}?v={{ this.theme.version }}"></script>
+    <script src="{{ ('assets/js/uikit-icons.min.js')|theme }}?v={{ this.theme.version }}"></script>
+</head>
+<body>
+    {% page %}
+</body>
+</html>

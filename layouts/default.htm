@@ -1,0 +1,30 @@
+description = "Default template"
+==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=1">
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}">
+    <meta name="description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+    <meta property="og:site_name" content="{{ this.theme.site_name }} - {{ this.theme.site_motto }}" />
+    <meta property="og:type" content="article" />
+    {% placeholder meta_og default %}
+    <meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+    <meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+    <meta property="og:url" content="{{this.app}}" />
+    <meta property="og:image" content="https://www.hynusantara.com/content/images/2019/01/be-creative-creative-creativity-256514-2.jpg" />
+    {% endplaceholder %}
+    <link rel="shortcut icon" href="{{ 'assets/images/favicon.png'|theme }}">
+    <link rel="stylesheet" href="{{ ('assets/css/theme.css')|theme }}?v={{ this.theme.version }}">
+    <script src="{{ ('assets/js/uikit.min.js')|theme }}?v={{ this.theme.version }}"></script>
+    <script src="{{ ('assets/js/uikit-icons.min.js')|theme }}?v={{ this.theme.version }}"></script>
+</head>
+<body>
+    {% page %}
+
+    {% partial 'footer' %}
+</body>
+</html>

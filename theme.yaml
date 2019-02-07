@@ -1,0 +1,6 @@
+name: DigistTheme
+description: 'Digistlab official site theme'
+author: Pizaini
+homepage: 'https://www.digistlab.com'
+code: DigistTheme
+form: fields.yaml

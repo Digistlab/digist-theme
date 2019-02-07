@@ -1,0 +1,30 @@
+fields:
+    site_name:
+        span: auto
+        label: Site name
+        comment: Website name
+        default: DigistTheme
+    site_motto:
+        label: Site motto
+        comment: A short statement about the website.
+        default: Teknologi untuk kita
+        span: auto
+    facebook:
+        label: Facebook URL
+        comment: https://www.facebook.com/*
+        span: auto
+        default: https://www.facebook.com/digistlab
+    twitter:
+        label: Twitter ID
+        span: auto
+    instagram:
+        label: Instagram ID
+        span: auto
+    youtube:
+        label: Youtube URL or channel
+        span: auto
+        default: https://www.youtube.com/digistlab
+    version:
+        span: auto
+        label: Version (build)
+        default: 1.0.0

@@ -1,0 +1,13 @@
+{
+  "name": "digist-theme",
+  "version": "1.0.0",
+  "description": "Digistlab site theme for October CMS",
+  "author": "Pizaini <pizaini@digistlab.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-cli": "^2.0.1",
+    "gulp-less": "^4.0.1",
+    "gulp-rename": "^1.4.0"
+  }
+}
