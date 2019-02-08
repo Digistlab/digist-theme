@@ -4,11 +4,10 @@ description = "Footer template"
     <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
         <a href="" class="uk-position-center-left uk-position-medium uk-visible@m">&copy; 2018 - {{ "now"|date("Y") }}  by Digistlab </a>
         <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
-            <li class="uk-first-column"><span>Version <span uikit-version="">{{this.theme.version}}</span></span></li>
-            <li><a href="#">Link</a> </li>
-            <li><a href="#">Link</a> </li>
-            <li><a href="#">Link</a> </li>
+            <li><a href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a></li>
+            <li><a href="{{'/aplikasi-layanan'|app}}">Aplikasi dan layanan</a></li>
+            <li><a href="{{'/blog'|app}}">Blog</a></li>
         </ul>
-        <a href="./v2" class="uk-button uk-button-default tm-button-default uk-position-center-right uk-position-medium uk-visible@m">Go to</a>
+        <a href="https://github.com/digistlab" target="_blank" class="uk-button uk-button-default tm-button-default uk-position-center-right uk-position-medium uk-visible@m"><span uk-icon="icon: github"></span> Version {{this.theme.version}}</a>
     </div>
 </div>
