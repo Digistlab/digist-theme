@@ -1,3 +1,7 @@
 description = "Footer template"
 ==
-&copy; 2018 - {{ "now"|date("Y") }}
+<div class="uk-section uk-section-primary uk-light">
+    <div class="uk-container">
+        &copy; 2018 - {{ "now"|date("Y") }} v{{this.theme.version}}
+    </div>
+</div>
