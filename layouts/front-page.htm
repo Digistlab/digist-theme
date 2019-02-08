@@ -6,14 +6,94 @@ description = "Front page template"
     <meta charset="UTF-8">
     <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=1">
-    <meta name="robots" content="noindex,nofollow">
-    <meta name="theme-color" content="{{ this.theme.brand_color }}">
+    <meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}">
+    <meta name="description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+    <meta property="og:site_name" content="{{ this.theme.site_name }} - {{ this.theme.site_motto }}" />
+    <meta property="og:type" content="article" />
+    {% placeholder meta_og default %}
+    <meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+    <meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+    <meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
+    {% endplaceholder %}
     <link rel="shortcut icon" href="{{ 'assets/images/favicon.png'|theme }}">
     <link rel="stylesheet" href="{{ ('assets/css/theme.css')|theme }}?v={{ this.theme.version }}">
     <script src="{{ ('assets/js/uikit.min.js')|theme }}?v={{ this.theme.version }}"></script>
-    <script src="{{ ('assets/js/uikit-icons.min.js')|theme }}?v={{ this.theme.version }}"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132378792-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-132378792-1');
+    </script>
 </head>
 <body>
-    {% page %}
+<div class="uk-position-relative">
+    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -400; media: @s" style="background-image: url({{'assets/images/bg01.jpg'| theme}});">
+        <div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical">
+            <h1>Digistlab menghadirkan produk dan layanan untuk Anda</h1>
+            <a class="uk-button tm-button-primary" href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a>
+        </div>
+    </div>
+    <div class="uk-position-top uk-navbar-container uk-navbar-transparent">
+        <div uk-sticky="media: @s;show-on-up: true;animation: uk-animation-slide-top;cls-inactive: uk-navbar-transparent;top: 400" class="uk-navbar-container tm-navbar-container uk-light">
+            <div class="uk-container uk-container-expand">
+                <nav uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" href="{{''|app}}">
+                            <img class="uk-logo uk-responsive-height" src="{{'digist-lab-logo-white-small.png' | media}}" alt="logo">
+                            <img class="uk-logo-inverse uk-responsive-height" src="{{'digistlab-logo-white-small-tranparent.png' | media}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="uk-navbar-right">
+                        <ul class="uk-nav uk-navbar-nav uk-visible@s">
+                            <li class="uk-navbar-item"><a href="{{''|app}}">Home</a></li>
+                            <li class="uk-navbar-item"><a href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a></li>
+                            <li class="uk-navbar-item"><a href="{{'/aplikasi-layanan'|app}}">Aplikasi dan layanan</a></li>
+                            <li class="uk-navbar-item"><a href="{{'/blog'|app}}">Blog</a></li>
+                        </ul>
+                        <a uk-navbar-toggle-icon="#" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@s uk-navbar-toggle-icon uk-icon" uk-icon="icon: menu"></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-default">
+    <div class="uk-container">
+        <div class="uk-child-width-1-4@s uk-text-center" uk-grid>
+            <div>
+                <span uk-icon="icon: server; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Layanan</h2>
+                <p>Digistlab menyediakan layanan kepada masyarakat Indonesia untuk berbagai kebutuhan.</p>
+            </div>
+            <div>
+                <span uk-icon="icon: social; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Produk</h2>
+                <p>Menyediakan produk-produk berkualitas sesuai kebutuhan Anda di era digital.</p>
+            </div>
+            <div>
+                <span uk-icon="icon: desktop; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Multiplatform</h2>
+                <p>Produk dan layanan digistlab tersedia untuk berbagai perangkat untuk menjangkau masyarakat yang lebih luas.</p>
+            </div>
+            <div>
+                <span uk-icon="icon: cloud-download; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Cloud</h2>
+                <p>Layanan dan produk Digistlab tersedia secara online yang terintegrasi</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-text-center">
+    <div class="uk-container">
+        <h1 class="uk-heading-primary uk-heading-bullet">{{ this.theme.site_motto}}</h1>
+        <p>Menghadirkan solusi teknologi untuk masyarakat Indonesia</p>
+        <a class="uk-button uk-button-primary tm-button-primary" href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a>
+    </div>
+</div>
+{% page %}
+
+{% partial 'footer' %}
+<script src="{{ ('assets/js/uikit-icons.min.js')|theme }}?v={{ this.theme.version }}"></script>
 </body>
 </html>
