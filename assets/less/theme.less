@@ -1,4 +1,22 @@
 @import "uikit-less/uikit.theme.less";
+
+.uk-icon {
+    color: @background-primary-background;
+}
+
+.uk-icon-button {
+    color: @background-primary-background;
+}
+
+/* Hover + Focus */
+.uk-icon-button:hover,
+.uk-icon-button:focus {
+    background-color: darken(@background-primary-background, 5%);;
+    color: @global-muted-background;
+    outline: none;
+    .hook-icon-button-hover;
+}
+
 // Fonts
 @font-face {
     font-family: 'ProximaNova';

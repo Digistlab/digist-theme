@@ -2,12 +2,14 @@ description = "Footer template"
 ==
 <div class="uk-section uk-section-primary uk-light">
     <div class="uk-container uk-container-expand uk-text-center uk-position-relative">
-        <a href="" class="uk-position-center-left uk-position-medium uk-visible@m">&copy; 2018 - {{ "now"|date("Y") }}  by Digistlab </a>
+        <a href="{{'/'|app}}" class="uk-position-center-left uk-position-medium uk-visible@m">&copy; 2018 - {{ "now"|date("Y") }}  by Digistlab </a>
         <ul uk-margin="" class="uk-subnav tm-subnav uk-flex-inline uk-flex-center uk-margin-remove-bottom">
             <li><a href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a></li>
-            <li><a href="{{'/aplikasi-layanan'|app}}">Aplikasi dan layanan</a></li>
+            <li><a href="{{'/produk-dan-layanan'|app}}">Produk dan layanan</a></li>
             <li><a href="{{'/blog'|app}}">Blog</a></li>
         </ul>
-        <a href="https://github.com/digistlab" target="_blank" class="uk-button uk-button-default tm-button-default uk-position-center-right uk-position-medium uk-visible@m"><span uk-icon="icon: github"></span> Version {{this.theme.version}}</a>
+        <a href="https://github.com/digistlab/digist-theme" target="_blank" class="uk-button uk-button-default tm-button-default uk-position-center-right uk-position-medium uk-visible@m"><span uk-icon="icon: github"></span> Digist-Theme <span id="latest_version">{{this.theme.version}}</span></a>
     </div>
 </div>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{'assets/js/custom.min.js'|theme}}"></script>

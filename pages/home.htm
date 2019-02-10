@@ -1,8 +1,118 @@
 title = "Home"
 url = "/"
-layout = "default"
 description = "Welcome to Digistlab"
 meta_title = "Welcome to Digistlab"
 meta_description = "Welcome to Digistlab"
 is_hidden = 0
 ==
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% partial 'head' %}
+    <meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+    <meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+    <meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
+</head>
+<body>
+<div class="uk-position-relative">
+    <div class="uk-height-large uk-background-cover uk-light uk-flex" uk-parallax="bgy: -400; media: @s" style="background-image: url({{'assets/images/bg01.jpg'| theme}});">
+        <div class="uk-container uk-width-3-4@m uk-text-center uk-margin-auto-vertical uk-animation-scale-up">
+            <h1>Digistlab merupakan lab reseach & development yang menghasilkan produk dan layanan berbasis teknologi informasi</h1>
+            <a class="uk-button tm-button-primary uk-margin-small-right" href="{{'/produk-dan-layanan'|app}}">Produk dan layanan</a>
+            <a class="uk-link" href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a>
+        </div>
+    </div>
+    <div class="uk-position-top uk-navbar-container uk-navbar-transparent">
+        <div uk-sticky="media: @s;show-on-up: true;animation: uk-animation-slide-top;cls-inactive: uk-navbar-transparent;top: 400" class="uk-navbar-container tm-navbar-container uk-light">
+            <div class="uk-container uk-container-expand">
+                <nav uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a class="uk-navbar-item uk-logo" href="{{''|app}}">
+                            <img class="uk-logo uk-responsive-height" src="{{'digist-lab-logo-white-small.png' | media}}" alt="logo">
+                            <img class="uk-logo-inverse uk-responsive-height" src="{{'digistlab-logo-white-small-tranparent.png' | media}}" alt="logo">
+                        </a>
+                    </div>
+                    <div class="uk-navbar-right">
+                        {% partial 'top_nav'%}
+                        <a uk-navbar-toggle-icon="#" href="#offcanvas" uk-toggle="" class="uk-navbar-toggle uk-hidden@s uk-navbar-toggle-icon uk-icon" uk-icon="icon: menu"></a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-default uk-section-large">
+    <div class="uk-container">
+        <h1 class="uk-text-center uk-heading-primary uk-heading-bullet">Mengapa Digistlab?</h1>
+        <div class="uk-child-width-1-4@s uk-text-center " uk-grid uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 500">
+            <div>
+                <span uk-icon="icon: server; ratio: 2.5;"></span>
+                <h2 class="uk-margin-small">Layanan</h2>
+                <p>Digistlab menyediakan layanan untuk berbagai kebutuhan</p>
+            </div>
+            <div>
+                <span uk-icon="icon: social; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Produk</h2>
+                <p>Menyediakan produk-produk pengembangan dan siap siap paka (ready to use)</p>
+            </div>
+            <div>
+                <span uk-icon="icon: desktop; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Multiplatform</h2>
+                <p>Produk dan layanan digistlab tersedia untuk berbagai perangkat untuk menjangkau masyarakat yang lebih luas.</p>
+            </div>
+            <div>
+                <span uk-icon="icon: cloud-download; ratio: 2.5"></span>
+                <h2 class="uk-margin-small">Cloud</h2>
+                <p>Layanan dan produk Digistlab tersedia secara online dan terintegrasi</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-large uk-text-center uk-section-muted">
+    <div class="uk-container" uk-scrollspy="cls:uk-animation-slide-bottom;; delay: 500;">
+        <h1 class="uk-heading-primary uk-heading-bullet">{{ this.theme.site_motto}}</h1>
+        <p>Teknologi dikembangkan untuk masyarakat</p>
+        <p>Digistlab melihat bahwa akselerasi teknologi infromasi belum sepenuhnya menjadi bagian penting bagi beberapa kalakang. Produk dan layanan teknologi infromasi dari Digistlab dibangun berdasarkan kajian komprehensif dan melalui tahapan penelitian akademis. Sehingga produk dan layanan Digistlab dapat bermanfaat dan tepat sasaran. </p>
+        <a class="uk-button uk-button-primary tm-button-primary" href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a>
+    </div>
+</div>
+<div class="uk-section uk-section-small uk-padding-remove" uk-scrollspy="cls:uk-animation-slide-right; delay: 500;">
+    <div class="uk-inline uk-background-secondary uk-overflow-hidden">
+        <img uk-scrollspy="cls: uk-animation-kenburns; repeat: true" class="uk-blend-multiply" src="{{'assets/images/banner.jpg'|theme}}" alt="">
+        <div class="uk-overlay uk-light uk-position-center uk-text-center">
+            <h2 class="uk-heading-divider">Digistlab: Berkarya, akademis dan profesional</h2>
+            <a class="uk-button uk-button-default" href="{{'/produk-dan-layanan'|app}}">Produk dan layanan</a>
+        </div>
+    </div>
+</div>
+<div class="uk-section uk-section-large">
+    <div class="uk-container">
+        <h1 class="uk-heading-bullet uk-text-center uk-heading-primary">Layanan dan kerjasama</h1>
+        <p class="uk-text-center">Digistlab bersedia bekerjasama dengan berbagai pihak dalam rangka akselarasi teknologi informasi di Indonesia</p>
+        <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy="cls:uk-animation-fade; target: > div; delay: 500;">
+            <div>
+                <div class="uk-border-rounded uk-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">Custom produk</h3>
+                    <p>Penyesuaian (custom) produk dari Digistlab untuk digunakan pada organisasi Anda</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-border-rounded uk-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">Transfer knowladge</h3>
+                    <p>Memberikan pelatihan dan transfer knowladge tentang produk dan teknologi yang digunakan dalam produk Digistlab</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-border-rounded uk-card uk-card-hover uk-card-body">
+                    <h3 class="uk-card-title">Request/permintaan</h3>
+                    <p>Digistlab bersedia mengembangkan produk dan layanan berdasarkan permintaan/request tertentu</p>
+                </div>
+            </div>
+        </div>
+        <p class="uk-text-center">Informasi layanan dan kerjasama dapat mengirimkan email ke info@digistlab.com</p>
+    </div>
+</div>
+{% partial 'footer' %}
+<script src="{{ ('assets/js/uikit-icons.min.js')|theme }}?v={{ this.theme.version }}"></script>
+</body>
+</html>
