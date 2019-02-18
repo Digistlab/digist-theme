@@ -1,0 +1,86 @@
+description = "Top slideshow"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog/category"
+postPage = "blog/post"
+
+[viewBag]
+==
+<div class="uk-section uk-section-muted uk-section-small">
+    <div uk-slideshow="animation: slide; min-height: 200; max-height: 300; autoplay: true; pause-on-hover: true">
+        <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+            <ul class="uk-slideshow-items">
+                <li>
+                    <div class="uk-container">
+                        <div class="uk-card uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                            <div class="uk-card-media-left uk-cover-container">
+                                <img data-src="{{'assets/images/bg.jpg'|theme}}" alt="" height="300" uk-img="target: !.uk-slideshow-items">
+                            </div>
+                            <div>
+                                <div class="uk-card-body">
+                                    <h3 class="uk-card-title">Media Left</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                </div>
+                                <div class="uk-card-footer">
+                                    <a href="#" class="uk-button uk-button-default">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-container">
+                        <div class="uk-card uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                            <div class="uk-card-media-left uk-cover-container">
+                                <img data-src="{{'assets/images/theme-preview.png'|theme}}" alt="" height="300"  uk-img="target: !.uk-slideshow-items">
+                            </div>
+                            <div>
+                                <div class="uk-card-body">
+                                    <h3 class="uk-card-title">Media Left</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                </div>
+                                <div class="uk-card-footer">
+                                    <a href="#" class="uk-button uk-button-default">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li>
+                    <div class="uk-container">
+                        <div class="uk-card uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                            <div class="uk-card-media-left uk-cover-container">
+                                <img data-src="{{'assets/images/banner.jpg'|theme}}" alt="" height="300"  uk-img="target: !.uk-slideshow-items">
+                            </div>
+                            <div>
+                                <div class="uk-card-body">
+                                    <h3 class="uk-card-title">Media Left</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                </div>
+                                <div class="uk-card-footer">
+                                    <a href="#" class="uk-button uk-button-default">Read more</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+    </div>
+</div>
+<div class="uk-section">
+    <div class="uk-container">
+        <h1>Produk dan layanan</h1>
+    </div>
+</div>
