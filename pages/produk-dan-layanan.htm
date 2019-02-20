@@ -12,15 +12,28 @@ categoryPage = "blog/category"
 ==
 <?php
 function onEnd(){
-    if ($this->post){
-        $this->page->title = $this->post->title;
-    }else{
-        return Redirect::to('404');
-    }
+   if($this->param('slug')){
+        if ($this->post){
+            $this->page->title = $this->post->title;
+        }else{
+            return Redirect::to('404');
+        }
+   }
 }
 ?>
 ==
+
 {% if this.param.slug %}
+{% put meta_name %}
+<meta name="title" content="{{ post.title|default(this.page.title) }} | {{ this.theme.site_name }}">
+<meta name="description" content="{{ post.summary|default(this.page.description) }}" />
+{% endput %}
+
+{% put meta_og %}
+<meta property="og:title" content="{{post.title|default(this.page.title) }} | {{ this.theme.site_name }}" />
+<meta property="og:description" content="{{post.summary|default(this.page.description) }}" />
+<meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
+{% endput %}
     {% partial 'produk-layanan-detail' %}
 {% else %}
     {% partial 'produk-layanan-list' %}

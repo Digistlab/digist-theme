@@ -2,11 +2,18 @@ description = "Default header"
 ==
 <meta charset="UTF-8">
 <title>{{ this.page.title }} | {{ this.theme.site_name }}</title>
-<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=1">
-<meta name="title" content="{{ this.page.meta_title|default(this.page.title) }}">
+{% placeholder meta_name default %}
+<meta name="title" content="{{ this.page.meta_title|default(this.page.title) }} | {{ this.theme.site_name }}">
 <meta name="description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+{% endplaceholder %}
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,user-scalable=1">
 <meta property="og:site_name" content="{{ this.theme.site_name }} - {{ this.theme.site_motto }}" />
 <meta property="og:type" content="article" />
+{% placeholder meta_og default %}
+<meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
+<meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
+<meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
+{% endplaceholder %}
 <link rel="author" href="humans.txt" />
 <link rel="shortcut icon" href="{{'/favicon.ico'|app}}">
 <link rel="stylesheet" href="{{('assets/css/theme.css')|theme }}?v={{ this.theme.version}}">

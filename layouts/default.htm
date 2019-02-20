@@ -4,11 +4,6 @@ description = "Default"
 <html lang="en">
 <head>
     {% partial 'head' %}
-    {% placeholder meta_og default %}
-    <meta property="og:title" content="{{ this.page.meta_title|default(this.page.title) }}" />
-    <meta property="og:description" content="{{ this.page.meta_description|default(this.page.description) }}" />
-    <meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
-    {% endplaceholder %}
 </head>
 <body>
 <div class="uk-navbar-container">
