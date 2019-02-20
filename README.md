@@ -1,4 +1,8 @@
 # [UIKit v3.*](https://www.getuikit.com) custom for Digistlab site
+Tema front end untuk OctoberCMS
+
+## Live preview
+Visit us at [www.digistlab.com](https://www.digistlab.com)
 
 ## Instalasi
 * Install dependency: `npm install`
