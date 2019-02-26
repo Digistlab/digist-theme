@@ -76,7 +76,9 @@ postPage = "blog"
                         </div>
                         <h3 class="uk-margin-remove uk-padding-remove"><a href="{{('/blog/'~post.slug)|app}}">{{post.title | raw}}</a> </h3>
                         <p class="uk-text-muted uk-margin-remove uk-padding-remove">{{post.published_at | date('d F Y') }}</p>
-                        {{post.summary | raw}}
+                        <div class="uk-margin-medium-top">
+                            {{post.summary | raw}}
+                        </div>
                     </div>
                     <div class="uk-card-footer">
                         <p><a class="uk-button uk-button-primary tm-button-primary" href="{{('/blog/'~post.slug)|app}}">Selengkapnya</a> </p>
