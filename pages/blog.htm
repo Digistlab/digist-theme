@@ -6,18 +6,34 @@ meta_title = "Blog"
 meta_description = "Blog"
 is_hidden = 0
 
-[blogPosts]
-pageNumber = "{{ :page }}"
-postsPerPage = 10
-noPostsMessage = "No posts found"
-sortOrder = "published_at desc"
-categoryPage = "blog"
-postPage = "blog"
-
 [blogPost]
 slug = "{{ :slug }}"
-categoryPage = "blog/category"
+categoryPage = "blog"
 ==
-<div class="uk-section">
-    
-</div>
+<?php
+function onEnd(){
+   if($this->param('slug')){
+        if ($this->post){
+            $this->page->title = $this->post->title;
+        }else{
+            return Redirect::to('404');
+        }
+    }
+}
+?>
+==
+{% if this.param.slug %}
+    {% put meta_name %}
+    <meta name="title" content="{{ post.title|default(this.page.title) }} | {{ this.theme.site_name }}">
+    <meta name="description" content="{{ post.summary|default(this.page.description) }}" />
+    {% endput %}
+
+    {% put meta_og %}
+    <meta property="og:title" content="{{post.title|default(this.page.title) }} | {{ this.theme.site_name }}" />
+    <meta property="og:description" content="{{post.summary|default(this.page.description) }}" />
+    <meta property="og:url" content="{{this.controller.currentPageUrl()}}" />
+    {% endput %}
+    {% partial 'blog-detail' %}
+{% else %}
+    {% partial 'blog-list' %}
+{% endif %}

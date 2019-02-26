@@ -1,0 +1,23 @@
+description = "Detail"
+
+==
+<div class="uk-section uk-margin-remove uk-padding-remove">
+    <div class="uk-text-center">
+        {% if post.featured_images.count %}
+        {% set image = post.featured_images[0] %}
+        <img class="uk-text-center" data-src="{{image.path}}" alt="" width="" uk-img="target: !.uk-slideshow-items" style="height: 300px;">
+        {% else %}
+        <img class="uk-text-center" data-src="{{'default_image.png'|media}}" alt="" uk-img="target: !.uk-slideshow-items" style="height: 300px;">
+        {% endif %}
+    </div>
+
+</div>
+<div class="uk-section">
+    <div class="uk-container">
+        <div>
+            <h2 class="uk-heading-bullet uk-margin-remove">{{ post.title}}</h2>
+            <span class="uk-text-muted">{{post.published_at | date('d F Y') }}</span>
+        </div>
+        {{post.content | md}}
+    </div>
+</div>
