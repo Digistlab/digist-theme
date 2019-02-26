@@ -15,8 +15,8 @@ description = "Detail"
 <div class="uk-section">
     <div class="uk-container">
         <div>
-            <h2 class="uk-heading-bullet uk-margin-remove">{{ post.title}}</h2>
-            <span class="uk-text-muted">{{post.published_at | date('d F Y') }}</span>
+            <h2 class="uk-heading-bullet uk-margin-remove uk-padding-remove">{{ post.title}}</h2>
+            <p class="uk-text-muted uk-margin-remove uk-padding-remove">{{post.published_at | date('d F Y') }}</p>
         </div>
         {{post.content | md}}
     </div>
