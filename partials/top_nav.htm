@@ -2,9 +2,17 @@ description = "Top menu"
 
 [viewBag]
 ==
+{%
+set menus = {
+    home: {url: '',  title: 'Home', file: 'home'},
+    tentangDigistlab: {url: 'tentang-digistlab',  title: 'Tentang Digistlab', file: 'tentang-digistlab'},
+    produkDanLayanan: {url: 'produk-dan-layanan',  title: 'Produk dan layanan', file: 'produk-dan-layanan'},
+    blog: {url: 'blog',  title: 'Blog', file: 'blog'}
+}
+%}
+
 <ul class="uk-nav uk-navbar-nav uk-visible@s">
-    <li class="uk-navbar-item"><a href="{{''|app}}">Home</a></li>
-    <li class="uk-navbar-item"><a href="{{'/tentang-digistlab'|app}}">Tentang Digistlab</a></li>
-    <li class="uk-navbar-item"><a href="{{'/produk-dan-layanan'|app}}">Produk dan layanan</a></li>
-    <li class="uk-navbar-item"><a href="{{'/blog'|app}}">Blog</a></li>
+    {% for menu in menus %}
+        <li class="uk-navbar-item {{this.page.baseFileName == menu.file ? ' uk-active': ''}}"><a href="{{('/'~menu.url)|app}}">{{menu.title}}</a></li>
+    {% endfor %}
 </ul>
