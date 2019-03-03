@@ -4,6 +4,9 @@ Tema front end untuk OctoberCMS
 ## Live preview
 Visit us at [www.digistlab.com](https://www.digistlab.com)
 
+## Review
+Please read the review at [www.hynusantara.com](https://www.hynusantara.com)
+
 ## Instalasi
 * Install dependency: `npm install`
 * Untuk compile file LESS menjadi CSS, jalankan perintah `gulp` atau `gulp -w`
